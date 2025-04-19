@@ -379,6 +379,8 @@ header {
 .hero {
     padding: 180px 0 160px;
     position: relative;
+    background-color: var(--white);
+    background-image: linear-gradient(to bottom, #ffffff, #f8f8f8);
 }
 
 .hero::after {

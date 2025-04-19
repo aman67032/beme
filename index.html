@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Me - Self-Care & Period Care Essentials</title>
+    <link rel="icon" href="images/logo-2_540x.avif" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Print stylesheet to fix PDF generation -->
+    <style media="print">
+        /* Fix for red background in PDF */
+        .hero {
+            background-color: white !important;
+            padding: 50px 0 !important;
+            break-inside: avoid;
+        }
+        
+        /* Hide floating elements that might cause issues */
+        .floating-elements-container, 
+        .decorative-accent, 
+        .floating-element {
+            display: none !important;
+        }
+        
+        /* Fix the background colors for all sections */
+        section {
+            background-color: white !important;
+            position: relative !important;
+            overflow: visible !important;
+        }
+        
+        /* Remove problematic pseudo-elements */
+        section::before, 
+        section::after, 
+        .wave-divider {
+            display: none !important;
+        }
+        
+        /* Adjust layout for better printing */
+        .product-grid, 
+        .category-grid, 
+        .blog-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+        }
+        
+        /* Ensure content is visible */
+        * {
+            color: black !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+        
+        /* Ensure background colors are printable */
+        .product-card, 
+        .testimonial, 
+        .blog-card {
+            background-color: white !important;
+            border: 1px solid #ddd !important;
+        }
+        
+        /* Set all text to be black for better readability */
+        .product-content h3, 
+        .category-content h3, 
+        .section-title, 
+        .benefits-content h2, 
+        p {
+            color: black !important;
+        }
+        
+        /* Modify backgrounds for feature areas */
+        .features, 
+        .featured-products, 
+        .benefits, 
+        .testimonials {
+            background: white !important;
+            padding: 20px 0 !important;
+        }
+        
+        /* Fix button visibility */
+        .btn-primary, 
+        .btn-outline {
+            border: 1px solid #8B1E29 !important;
+            color: #8B1E29 !important;
+            background: white !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="announcement-bar">
+            <p>Free Shipping and COD Available</p>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo-2_540x.avif" alt="Be Me - Unapologetically Me" class="logo-image">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">Period Care <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Reusable Period Panty</h4>
+                                    <ul>
+                                        <li><a href="#">Hiphugger</a></li>
+                                        <li><a href="#">Mid Brief</a></li>
+                                        <li><a href="#">Seamless</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h4>More Period Products</h4>
+                                    <ul>
+                                        <li><a href="#">Disposable Period Panty</a></li>
+                                        <li><a href="#">Organic Sanitary Pads</a></li>
+                                        <li><a href="#">Tampons</a></li>
+                                        <li><a href="#">Applicator Tampons</a></li>
+                                        <li><a href="#">Menstrual Cup</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-image">
+                                    <img src="https://placekitten.com/300/300" alt="Period Care Products">
+                                    <a href="#" class="btn-outline">Shop Period Care</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Self Care <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Body Care</h4>
+                                    <ul>
+                                        <li><a href="#">Female Body Razor</a></li>
+                                        <li><a href="#">Female Body Razor Mini</a></li>
+                                        <li><a href="#">Face Razor</a></li>
+                                        <li><a href="#">Exfoliating Glove</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h4>Personal Care</h4>
+                                    <ul>
+                                        <li><a href="#">Disposable Sweat Pads</a></li>
+                                        <li><a href="#">Intimate Wipes</a></li>
+                                        <li><a href="#">Mini Facial Hair Remover</a></li>
+                                        <li><a href="#">Disposable Breast Pads</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-image">
+                                    <img src="https://placekitten.com/300/300" alt="Self Care Products">
+                                    <a href="#" class="btn-outline">Shop Self Care</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Everyday Care <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Comfort & Relief</h4>
+                                    <ul>
+                                        <li><a href="#">Cramp Comfort</a></li>
+                                        <li><a href="#">Cramp Comfort PRO</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h4>Hygiene Essentials</h4>
+                                    <ul>
+                                        <li><a href="#">Mini Washing Machine</a></li>
+                                        <li><a href="#">Portable Jet Spray</a></li>
+                                        <li><a href="#">Disposable Toilet Seat Cover</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-image">
+                                    <img src="https://placekitten.com/300/300" alt="Everyday Care Products">
+                                    <a href="#" class="btn-outline">Shop Everyday Care</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">Shop All</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="account"><i class="fas fa-user"></i></a>
+                    <a href="#" class="cart"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-elements-container">
+            <!-- Product floats -->
+            <div class="floating-element product-float large float-1">
+                <img src="images/hiphuggerperiod panty .webp" alt="Period Panty">
+            </div>
+            <div class="floating-element product-float float-4">
+                <img src="images/product_2_4cb095f1-9535-463b-a151-7bca7f441438_470x.progressive.png.webp" alt="Menstrual Cup">
+            </div>
+            <div class="floating-element product-float small float-6 hide-mobile">
+                <img src="images/Applicator_img2_470x.progressive.png.webp" alt="Applicator">
+            </div>
+            
+            <!-- Character floats -->
+            <div class="floating-element character-float float-2">
+                <svg width="150" height="160" viewBox="0 0 150 160" fill="none">
+                    <path d="M75 20C52.9086 20 35 37.9086 35 60C35 82.0914 52.9086 100 75 100C97.0914 100 115 82.0914 115 60C115 37.9086 97.0914 20 75 20Z" fill="#FFC0CB"/>
+                    <path d="M75 30C58.4315 30 45 43.4315 45 60C45 76.5685 58.4315 90 75 90C91.5685 90 105 76.5685 105 60C105 43.4315 91.5685 30 75 30Z" fill="#FFFFFF"/>
+                    <circle cx="60" cy="50" r="5" fill="#333333"/>
+                    <circle cx="90" cy="50" r="5" fill="#333333"/>
+                    <path d="M65 70C65 70 70 75 75 75C80 75 85 70 85 70" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M75 100V140" stroke="#FFC0CB" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M55 110L35 140" stroke="#FFC0CB" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M95 110L115 140" stroke="#FFC0CB" stroke-width="10" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="floating-element character-float large float-3">
+                <svg width="200" height="220" viewBox="0 0 200 220" fill="none">
+                    <path d="M100 30C77.9086 30 60 47.9086 60 70C60 92.0914 77.9086 110 100 110C122.091 110 140 92.0914 140 70C140 47.9086 122.091 30 100 30Z" fill="#8B1E29"/>
+                    <path d="M100 40C83.4315 40 70 53.4315 70 70C70 86.5685 83.4315 100 100 100C116.569 100 130 86.5685 130 70C130 53.4315 116.569 40 100 40Z" fill="#FFFFFF"/>
+                    <circle cx="85" cy="60" r="5" fill="#333333"/>
+                    <circle cx="115" cy="60" r="5" fill="#333333"/>
+                    <path d="M90 80C90 80 95 85 100 85C105 85 110 80 110 80" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M70 70C65 65 60 70 60 75C60 80 65 78 70 80" stroke="#8B1E29" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M130 70C135 65 140 70 140 75C140 80 135 78 130 80" stroke="#8B1E29" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M100 110V170" stroke="#8B1E29" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M70 130L40 160" stroke="#8B1E29" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M130 130L160 160" stroke="#8B1E29" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M100 20C105 15 110 10 115 15C120 20 115 25 100 30" fill="#D4AF37"/>
+                </svg>
+            </div>
+            <div class="floating-element character-float small float-5 hide-mobile">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="30" r="20" fill="#D4AF37"/>
+                    <circle cx="50" cy="30" r="15" fill="#FFFFFF"/>
+                    <circle cx="43" cy="25" r="3" fill="#333333"/>
+                    <circle cx="57" cy="25" r="3" fill="#333333"/>
+                    <path d="M45 35C45 35 48 38 50 38C52 38 55 35 55 35" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 50V80" stroke="#D4AF37" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M35 60L20 80" stroke="#D4AF37" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M65 60L80 80" stroke="#D4AF37" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h2>Self-Care & Period Care Essentials</h2>
+                <p class="tagline">UNAPOLOGETICALLY ME</p>
+                <p>Designed for comfort, made for confidence</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary highlight">Shop Bestsellers</a>
+                    <a href="#" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+    
+    <div class="wave-divider">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <p>Free shipping across India</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-tag"></i>
+                <p>Upgraded quick dry technology</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <p>Assured effortless cleanup</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <p>Easy removable tags</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placekitten.com/600/800" alt="Period Essentials">
+                    </div>
+                    <div class="category-content">
+                        <h3>Period Essentials</h3>
+                        <a href="#" class="btn-text">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placekitten.com/600/800" alt="Self Care">
+                    </div>
+                    <div class="category-content">
+                        <h3>Self Care</h3>
+                        <a href="#" class="btn-text">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placekitten.com/600/800" alt="Hygiene & Freshness">
+                    </div>
+                    <div class="category-content">
+                        <h3>Hygiene & Freshness</h3>
+                        <a href="#" class="btn-text">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placekitten.com/600/800" alt="Period Pain & Comfort">
+                    </div>
+                    <div class="category-content">
+                        <h3>Period Pain & Comfort</h3>
+                        <a href="#" class="btn-text">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="decorative-accent accent-1"></div>
+        <div class="decorative-accent accent-2 accent-gold"></div>
+        
+        <div class="floating-elements-container">
+            <!-- Product floats -->
+            <div class="floating-element product-float small float-2">
+                <img src="images/compact cleaing .webp" alt="Compact Cleaning">
+            </div>
+            <div class="floating-element product-float float-5">
+                <img src="images/selfcare.webp" alt="Self Care">
+            </div>
+            
+            <!-- Character floats -->
+            <div class="floating-element character-float small float-4 hide-mobile">
+                <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+                    <path d="M50 20C38.9543 20 30 28.9543 30 40C30 51.0457 38.9543 60 50 60C61.0457 60 70 51.0457 70 40C70 28.9543 61.0457 20 50 20Z" fill="#8B1E29"/>
+                    <path d="M50 25C41.7157 25 35 31.7157 35 40C35 48.2843 41.7157 55 50 55C58.2843 55 65 48.2843 65 40C65 31.7157 58.2843 25 50 25Z" fill="#FFFFFF"/>
+                    <circle cx="45" cy="35" r="3" fill="#333333"/>
+                    <circle cx="55" cy="35" r="3" fill="#333333"/>
+                    <path d="M45 45C45 45 48 48 50 48C52 48 55 45 55 45" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 60V90" stroke="#8B1E29" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M40 70L30 90" stroke="#8B1E29" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M60 70L70 90" stroke="#8B1E29" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M30 40C25 35 30 30 35 35" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M70 40C75 35 70 30 65 35" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title">Most Loved Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">21% OFF</div>
+                    <div class="product-image">
+                        <img src="https://placekitten.com/600/600" alt="Hiphugger Period Panty">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Hiphugger Period Panty</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹999</span>
+                            <span class="sale-price">₹799</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch" style="background-color: #FFC0CB;"></span>
+                            <span class="color-swatch" style="background-color: #000000;"></span>
+                            <span class="color-swatch" style="background-color: #FF6347;"></span>
+                            <span class="color-swatch" style="background-color: #E3DAC9;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">45% OFF</div>
+                    <div class="product-image">
+                        <img src="https://placekitten.com/600/600" alt="Disposable Period Panty">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Disposable Period Panty - Pack of 6</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹449</span>
+                            <span class="sale-price">₹249</span>
+                        </div>
+                        <div class="product-sizing">
+                            <span class="size-option">M-L</span>
+                            <span class="size-option">L-XL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">41% OFF</div>
+                    <div class="product-image">
+                        <img src="https://placekitten.com/600/600" alt="Menstrual Cup">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Menstrual Cup</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹399</span>
+                            <span class="sale-price">₹239</span>
+                        </div>
+                        <div class="product-sizing">
+                            <span class="size-option">S</span>
+                            <span class="size-option">M</span>
+                            <span class="size-option">L</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">50% OFF</div>
+                    <div class="product-image">
+                        <img src="https://placekitten.com/600/600" alt="Period Cramp Comfort">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Period Cramp Comfort</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹2,599</span>
+                            <span class="sale-price">₹1,299</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="decorative-accent accent-3"></div>
+        <div class="decorative-accent accent-4 accent-gold"></div>
+        
+        <div class="floating-elements-container">
+            <!-- Product floats -->
+            <div class="floating-element product-float small float-3">
+                <img src="images/period essensial.webp" alt="Period Essentials">
+            </div>
+            <div class="floating-element product-float float-1 hide-mobile">
+                <img src="images/hyigne freshness.webp" alt="Hygiene Freshness">
+            </div>
+            
+            <!-- Character floats -->
+            <div class="floating-element character-float float-6">
+                <svg width="150" height="160" viewBox="0 0 150 160" fill="none">
+                    <path d="M75 20C52.9086 20 35 37.9086 35 60C35 82.0914 52.9086 100 75 100C97.0914 100 115 82.0914 115 60C115 37.9086 97.0914 20 75 20Z" fill="#D4AF37"/>
+                    <path d="M75 30C58.4315 30 45 43.4315 45 60C45 76.5685 58.4315 90 75 90C91.5685 90 105 76.5685 105 60C105 43.4315 91.5685 30 75 30Z" fill="#FFFFFF"/>
+                    <circle cx="60" cy="50" r="5" fill="#333333"/>
+                    <circle cx="90" cy="50" r="5" fill="#333333"/>
+                    <path d="M60 70C60 70 70 80 75 80C80 80 90 70 90 70" stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M75 100V140" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M55 110L35 140" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M95 110L115 140" stroke="#D4AF37" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M35 60C30 55 35 50 40 55" stroke="#8B1E29" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M115 60C120 55 115 50 110 55" stroke="#8B1E29" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="benefits-content">
+                <h2>Unapologetically Comfortable</h2>
+                <p>Our products are carefully designed to make your period days more comfortable and stress-free, so you can be unapologetically yourself.</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check"></i> Alleviates Menstrual Pain</li>
+                    <li><i class="fas fa-check"></i> Promotes Muscle Relaxation</li>
+                    <li><i class="fas fa-check"></i> Increases Blood Circulation</li>
+                    <li><i class="fas fa-check"></i> Provides a Sense of Calm</li>
+                    <li><i class="fas fa-check"></i> Versatile and Reusable Options</li>
+                </ul>
+                <a href="#" class="btn-primary highlight">Learn More</a>
+            </div>
+            <div class="benefits-image">
+                <div class="benefits-image-main">
+                    <img src="images/period pain and comfort.webp" alt="Be Me Products - Period Pain & Comfort">
+                </div>
+                <div class="benefits-image-secondary">
+                    <img src="images/selfcare.webp" alt="Be Me Products - Self Care">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="wave-divider light-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,160L40,149.3C80,139,160,117,240,128C320,139,400,181,480,197.3C560,213,640,203,720,181.3C800,160,880,128,960,117.3C1040,107,1120,117,1200,122.7C1280,128,1360,128,1400,128L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="decorative-accent accent-1 accent-gold"></div>
+        <div class="decorative-accent accent-4"></div>
+        
+        <div class="container">
+            <h2 class="section-title">What the Be Me Community Says</h2>
+            <div class="rating-summary">
+                <div class="rating">
+                    <span class="rating-number">4.8</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>based on 701 reviews</p>
+                </div>
+                <div class="recommendation">
+                    <span>99%</span>
+                    <p>recommended this product to a friend</p>
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-info">
+                            <h4>Amisha</h4>
+                            <p>3 days ago</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Finally found a brand that has everything I need for my periods! From menstrual cups to tampons, and even reusable & disposable period panties, Be Me has me covered. No more running to different places—all my essentials in one place. Reliable, comfortable, and totally hassle-free! Love it!</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-info">
+                            <h4>Shailja</h4>
+                            <p>5 days ago</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">I have tried many, but Be Me's reusable period panties are truly a game-changer! Super absorbent, leakproof, and unbelievably comfortable. They last long and make periods stress-free. No stains, no discomfort—just pure confidence! Never switching back to anything else!</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="customer-info">
+                            <h4>Aashi</h4>
+                            <p>2 days ago</p>
+                        </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">This body razor is everything I was looking for—gentle, precise, and no nicks or cuts! The grip is perfect, and it glides so smoothly. Leaves my skin super soft without irritation. No more salon visits, just Be Me for the perfect shave!</p>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="write-review">
+                <a href="#" class="btn-outline">Write a Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <div class="decorative-accent accent-2"></div>
+        <div class="decorative-accent accent-3 accent-gold"></div>
+        
+        <div class="container">
+            <h2 class="section-title">Let's Talk Her - Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/hiphuggerperiod panty .webp" alt="Guide to Tampons Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Complete Guide to Tampons: Everything You Need to Know</h3>
+                        <p>Digital tampons offer a practical, eco-friendly, and comfortable alternative...</p>
+                        <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/product_2_4cb095f1-9535-463b-a151-7bca7f441438_470x.progressive.png.webp" alt="Menstrual Cups Guide Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Ultimate Guide to Menstrual Cups: Benefits, Usage, and Everything Else</h3>
+                        <p>Switching to a menstrual cup offers a more sustainable, cost-effective, and comfortable option...</p>
+                        <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/disposable_img1_470x.progressive.png.webp" alt="Vaginal Discharge Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Why Your Vaginal Discharge Bleaches Underwear & How to Prevent It</h3>
+                        <p>Wondering why you see bleached or yellow stains on underwear? Learn the science behind it...</p>
+                        <a href="#" class="btn-text">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="#" class="btn-outline">View All Articles</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="wave-divider top-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,181.3C384,160,480,128,576,138.7C672,149,768,203,864,208C960,213,1056,171,1152,165.3C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="decorative-accent accent-1"></div>
+        <div class="decorative-accent accent-4 accent-gold"></div>
+        
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>You Got Mail</h2>
+                <p>Enter email for latest updates and offers!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn-primary highlight">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column contact">
+                    <div class="footer-logo">
+                        <img src="images/logo-2_540x.avif" alt="Be Me - Unapologetically Me">
+                    </div>
+                    <h3>Contact</h3>
+                    <p><i class="far fa-clock"></i> 07:00 am - 09:00 pm (Mon-Sat)</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 7568901934</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 8069409092</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 8062181212</p>
+                    <p><i class="far fa-envelope"></i> care@bemewoman.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Let's Talk Her - Blogs by Be Me</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Period Tracker</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Return and Exchange Policy</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Manifesto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Period Panties</a></li>
+                        <li><a href="#">Cramp Comfort</a></li>
+                        <li><a href="#">Cramp Comfort PRO</a></li>
+                        <li><a href="#">Mini Washing Machine</a></li>
+                        <li><a href="#">Sanitary Pads</a></li>
+                        <li><a href="#">Menstrual Cup</a></li>
+                        <li><a href="#">Tampons</a></li>
+                        <li><a href="#">Female Body Razor</a></li>
+                        <li><a href="#">Exfoliating Glove</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2025 Be Me. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
