@@ -56,66 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run the update function
     updateProductImages();
 
-    // Add page transition effect
-    const pageTransition = document.createElement('div');
-    pageTransition.className = 'page-transition';
-    document.body.appendChild(pageTransition);
-
-    // Add transition styles
-    const transitionStyle = document.createElement('style');
-    transitionStyle.textContent = `
-        .page-transition {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            z-index: 9999;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
-        }
-        
-        .page-transition.active {
-            transform: translateY(0);
-        }
-        
-        .page-transition.fade-out {
-            transform: translateY(-100%);
-        }
-    `;
-    document.head.appendChild(transitionStyle);
-
-    // Handle navigation links
+    // Handle navigation links - page transition removed but keeping normal link functionality
     const navLinks = document.querySelectorAll('nav a:not([target="_blank"])');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Only apply transition for internal links
+            // Only handle links that go to other pages (not anchors or empty links)
             const href = this.getAttribute('href');
             if (href.startsWith('#') || href === '' || href === '/') return;
-            
-            e.preventDefault();
-            const targetURL = this.href;
-            
-            // Activate transition
-            pageTransition.classList.add('active');
-            
-            // Navigate after transition completes
-            setTimeout(() => {
-                window.location.href = targetURL;
-            }, 500);
         });
     });
-
-    // Add transition when page loads
-    pageTransition.classList.add('active');
-    setTimeout(() => {
-        pageTransition.classList.add('fade-out');
-        setTimeout(() => {
-            pageTransition.classList.remove('active');
-            pageTransition.classList.remove('fade-out');
-        }, 500);
-    }, 300);
 
     // Add sticky header that shrinks on scroll
     const header = document.querySelector('header');
